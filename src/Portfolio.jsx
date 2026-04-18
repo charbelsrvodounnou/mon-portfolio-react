@@ -1164,7 +1164,7 @@ export default function Portfolio() {
                                         value={form.from_name}
                                         onChange={handleChange}
                                         placeholder="Votre nom complet"
-                                        className={`field-input${errorsfrom.name ? " has-error" : ""}`}
+                                        className={`field-input${errors.from_name ? " has-error" : ""}`}
                                         autoComplete="name"
                                     />
                                     {errors.from_name && <span className="field-error">{errors.from_name}</span>}
