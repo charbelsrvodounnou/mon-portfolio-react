@@ -798,15 +798,15 @@ export default function Portfolio() {
     ];
 
     /* ── formulaire ── */
-    const validate = () => {
-        const e = {};
-        if (!form.name.trim()) e.name = "Ce champ est requis";
-        if (!form.email.trim()) e.email = "Ce champ est requis";
-        else if (!/\S+@\S+\.\S+/.test(form.email)) e.email = "Adresse email invalide";
-        if (!form.subject.trim()) e.subject = "Ce champ est requis";
-        if (!form.message.trim()) e.message = "Ce champ est requis";
-        return e;
-    };
+   const validate = () => {
+    const e = {};
+    if (!form.from_name.trim()) e.from_name = "Ce champ est requis";
+    if (!form.from_email.trim()) e.from_email = "Ce champ est requis";
+    else if (!/\S+@\S+\.\S+/.test(form.from_email)) e.from_email = "Adresse email invalide";
+    if (!form.subject.trim()) e.subject = "Ce champ est requis";
+    if (!form.message.trim()) e.message = "Ce champ est requis";
+    return e;
+};
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -1161,15 +1161,13 @@ export default function Portfolio() {
                                     <input
                                         type="text"
                                         name="from_name"
-                                        value={form.name}
+                                        value={form.from_name}
                                         onChange={handleChange}
                                         placeholder="Votre nom complet"
-                                        className={`field-input${errors.name ? " has-error" : ""}`}
+                                        className={`field-input${errorsfrom.name ? " has-error" : ""}`}
                                         autoComplete="name"
                                     />
-                                    {errors.name && (
-                                        <span className="field-error">{errors.name}</span>
-                                    )}
+                                    {errors.from_name && <span className="field-error">{errors.from_name}</span>}
                                 </div>
 
                                 <div className="field">
@@ -1177,15 +1175,13 @@ export default function Portfolio() {
                                     <input
                                         type="email"
                                         name="from_email"
-                                        value={form.email}
+                                        value={form.from_email}
                                         onChange={handleChange}
                                         placeholder="votre@email.com"
-                                        className={`field-input${errors.email ? " has-error" : ""}`}
+                                        className={`field-input${errors.from_email ? " has-error" : ""}`}
                                         autoComplete="email"
                                     />
-                                    {errors.email && (
-                                        <span className="field-error">{errors.email}</span>
-                                    )}
+                                    {errors.from_email && <span className="field-error">{errors.from_email}</span>}
                                 </div>
                             </div>
 
